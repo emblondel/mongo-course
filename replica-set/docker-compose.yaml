@@ -1,0 +1,37 @@
+
+version: '3'
+
+services:
+
+  mongors1:
+    container_name: mongors1
+    image: mongo:4.4
+    command: mongod  --replSet mongors --port 27017 --dbpath /data/db
+    ports:
+      - 30001:27017
+    volumes:
+      - mongors1:/data/db
+
+  mongors2:
+    container_name: mongors2
+    image: mongo:4.4
+    command: mongod --replSet mongors --port 27017 --dbpath /data/db
+    ports:
+      - 30002:27017
+    volumes:
+      - mongors2:/data/db
+
+  mongors3:
+    container_name: mongors3
+    image: mongo:4.4
+    command: mongod --replSet mongors --port 27017 --dbpath /data/db
+    ports:
+      - 30003:27017
+    volumes:
+      - mongors3:/data/db
+
+volumes:
+  mongors1: {}
+  mongors2: {}
+  mongors3: {}
+

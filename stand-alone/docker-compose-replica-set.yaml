@@ -1,0 +1,16 @@
+
+version: '3'
+
+services:
+
+  mongo-alone-rs:
+    container_name: mongo-alone-rs
+    image: mongo:4.4
+    command: mongod --dbpath /data/db --port 27017
+    ports:
+    - 20002:27017
+    volumes:
+    - mongo-alone-rs:/data/db
+
+volumes:
+  mongo-alone-rs: {}
