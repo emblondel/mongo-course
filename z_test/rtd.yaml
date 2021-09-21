@@ -1,0 +1,16 @@
+
+version: '3'
+
+services:
+
+  mongo-rtd:
+    container_name: mongo-rtd
+    image: mongo:4.4
+    command: mongod --dbpath /data/db --port 27017 --wiredTigerCacheSizeGB 0.25
+    ports:
+    - 20003:27017
+    volumes:
+    - mongo-alone-alone:/data/db
+
+volumes:
+  mongo-rtd: {}
