@@ -10,7 +10,7 @@ services:
     ports:
     - 20003:27017
     volumes:
-    - mongo-alone-alone:/data/db
+    - mongo-rtd:/data/db
 
 volumes:
   mongo-rtd: {}
