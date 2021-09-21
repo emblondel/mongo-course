@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"communes.departements"},{"v":2,"key":{"contour":"2dsphere"},"name":"contour_2dsphere","ns":"communes.departements","2dsphereIndexVersion":3}]}
