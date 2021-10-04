@@ -9,6 +9,8 @@ services:
     command: mongod  --replSet mongors --port 27017 --dbpath /data/db
     ports:
       - 30001:27017
+    networks:
+      - mongo
     volumes:
       - mongors1:/data/db
 
@@ -18,7 +20,9 @@ services:
     command: mongod --replSet mongors --port 27017 --dbpath /data/db
     ports:
       - 30002:27017
-    volumes:
+    networks:
+      - mongo
+      volumes:
       - mongors2:/data/db
 
   mongors3:
@@ -27,7 +31,9 @@ services:
     command: mongod --replSet mongors --port 27017 --dbpath /data/db
     ports:
       - 30003:27017
-    volumes:
+    networks:
+      - mongo
+      volumes:
       - mongors3:/data/db
 
 volumes:
@@ -36,4 +42,6 @@ volumes:
   mongors3: {}
 
 networks:
-  mongo
+  mongo:
+    driver: bridge
+    name: mongo

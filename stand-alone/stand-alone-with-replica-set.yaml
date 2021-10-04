@@ -8,12 +8,16 @@ services:
     image: mongo:4.4
     command: mongod --dbpath /data/db --port 27017 --replSet mongo1rs
     ports:
-    - 20002:27017
+      - 20002:27017
+    networks:
+      - mongo
     volumes:
-    - mongo1rs:/data/db
+      - mongo1rs:/data/db
 
 volumes:
   mongo1rs: {}
 
 networks:
-  mongo
+  mongo:
+    driver: bridge
+    name: mongo
