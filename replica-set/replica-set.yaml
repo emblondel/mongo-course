@@ -22,7 +22,7 @@ services:
       - 30002:27017
     networks:
       - mongo
-      volumes:
+    volumes:
       - mongors2:/data/db
 
   mongors3:
@@ -33,7 +33,7 @@ services:
       - 30003:27017
     networks:
       - mongo
-      volumes:
+    volumes:
       - mongors3:/data/db
 
 volumes:

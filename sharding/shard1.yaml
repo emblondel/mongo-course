@@ -9,6 +9,8 @@ services:
     command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /data/db
     ports:
       - 50001:27017
+    networks:
+      - mongo
     volumes:
       - shard1svr1:/data/db
 
@@ -18,6 +20,8 @@ services:
     command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /data/db
     ports:
       - 50002:27017
+    networks:
+      - mongo
     volumes:
       - shard1svr2:/data/db
 
@@ -27,6 +31,8 @@ services:
     command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /data/db
     ports:
       - 50003:27017
+    networks:
+      - mongo
     volumes:
       - shard1svr3:/data/db
 
@@ -36,4 +42,6 @@ volumes:
   shard1svr3: {}
 
 networks:
-  mongo
+  mongo:
+    driver: bridge
+    name: mongo
