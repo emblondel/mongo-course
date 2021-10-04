@@ -15,3 +15,5 @@ services:
 volumes:
   mongors4: {}
 
+networks:
+  mongo

@@ -35,3 +35,5 @@ volumes:
   shard2svr2: {}
   shard2svr3: {}
 
+networks:
+  mongo

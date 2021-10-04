@@ -3,14 +3,17 @@ version: '3'
 
 services:
 
-  mongo-alone-alone:
-    container_name: mongo-alone-alone
+  mongo1:
+    container_name: mongo1
     image: mongo:4.4
     command: mongod --dbpath /data/db --port 27017
     ports:
     - 20001:27017
     volumes:
-    - mongo-alone-alone:/data/db
+    - mongo1:/data/db
 
 volumes:
-  mongo-alone-alone: {}
+  mongo1: {}
+
+networks:
+  mongo

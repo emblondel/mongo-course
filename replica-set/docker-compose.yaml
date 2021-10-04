@@ -35,3 +35,5 @@ volumes:
   mongors2: {}
   mongors3: {}
 
+networks:
+  mongo
