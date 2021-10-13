@@ -1,4 +1,4 @@
-
+# limiting cache size to 250Mb
 version: '3'
 
 services:
